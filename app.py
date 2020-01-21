@@ -185,16 +185,3 @@ def get_recent_visitor():
     queue = sorted(todays_patients.items(), key=lambda x: x[1])
     print(queue)
     return Response(json.dumps({"Message":"Hello"}))
-    # recent_visitor = {}
-    # patient_endpoint ="https://uoft-hacks-2f135.firebaseio.com/patients.json?access_token=" + gcp_access_token 
-    # all_patients = requests.get(patient_endpoint).json()
-    # for patient in all_patients:
-    #     visits = all_patients[patient]['visits']
-    #     earliest_visit = find_earliest_visit(visits)
-    #     if not recent_visitor:
-    #         recent_visitor = {"patientId":patient,"visitId":earliest_visit}
-    #     else:
-    #         current_recent_visit = recent_visitor['visitId']
-    #         if get_time(earliest_visit) > get_time(current_recent_visit):
-    #             recent_visitor = {"patientId":patient,"visitId":earliest_visit}
-    # return Response(json.dumps(recent_visitor),status=200,mimetype='application/json')
